@@ -7,6 +7,10 @@ MODULE = Sub::Inject PACKAGE = Sub::Inject
 
 PROTOTYPES: DISABLE
 
+#ifndef intro_my /* perl 5.22+ */
+# define intro_my()      Perl_intro_my(aTHX)
+#endif
+
 #define is_code(sv) (SvROK(sv) && SvTYPE(SvRV(sv)) == SVt_PVCV)
 
 void
@@ -40,4 +44,3 @@ sub_inject(...)
     }
     LEAVE;
     intro_my();
-
