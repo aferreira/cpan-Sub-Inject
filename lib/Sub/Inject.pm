@@ -21,11 +21,8 @@ Sub::Inject - Inject subroutines into a lexical scope
     use Sub::Inject;   # requires perl 5.18+
 
     {
-
-        BEGIN {
-            Sub::Inject::sub_inject( 'one', sub { say "One!" } );
-        }
-        one();
+        BEGIN { Sub::Inject::sub_inject( 'one', sub { say "One!" } ); }
+        one();    # says "One!"
     }
 
     one();    # throws "Undefined subroutine &main::one called"
