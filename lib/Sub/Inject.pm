@@ -22,7 +22,7 @@ Sub::Inject - Inject subroutines into a lexical scope
 
     {
         BEGIN { Sub::Inject::sub_inject( 'one', sub { say "One!" } ); }
-        one();    # says "One!"
+        one();
     }
 
     one();    # throws "Undefined subroutine &main::one called"
@@ -53,7 +53,7 @@ Used like
 
     BEGIN { Sub::Inject::sub_inject('foo', sub { ... }) }
 
-it will work as
+it works as
 
     \state &foo = sub { ... };
 
@@ -63,20 +63,18 @@ That means:
 
 =item *
 
-being a true lexical provides consistent behavior
-based on scope
+The scope behavior is the same as the lexical sub statement
 
 =item *
 
-being a "state" lexical guarantees the persistence
-of the association between the name and the subroutine,
+Being a "state" lexical guarantees the persistence
+of the association between the name and the subroutine
 
 =item *
 
-the reference aliasing operation means no copy is done,
+The reference aliasing operation means no copy is done
 
 =back
-
 
 =head1 FUNCTIONS
 
