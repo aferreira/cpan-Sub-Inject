@@ -12,10 +12,6 @@ XSLoader::load(__PACKAGE__);
 
 =encoding utf8
 
-=head1 NAME
-
-Sub::Inject - Inject subroutines into a lexical scope
-
 =head1 SYNOPSIS
 
     use Sub::Inject;   # requires perl 5.18+
