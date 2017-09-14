@@ -1,0 +1,19 @@
+
+# OS X
+*.DS_STORE
+
+# perltidy backups
+*.bak
+
+# vim temp files
+*.swp
+
+# etc-quack generate copies
+*.orig
+
+# dev lib
+/inc/
+
+## dzil build files
+#/Sub-Inject-*.tar.gz
+#/Sub-Inject-*/
