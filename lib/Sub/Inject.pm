@@ -5,7 +5,7 @@ package Sub::Inject;
 
 use 5.018;
 
-require XSLoader;
+use XSLoader 0.20;
 XSLoader::load(__PACKAGE__);
 
 1;
