@@ -8,6 +8,11 @@ use 5.018;
 require XSLoader;
 XSLoader::load(__PACKAGE__);
 
+sub sub_inject {
+    @_ = %{ $_[0] } if @_ == 1 && ref $_[0] eq 'HASH';
+    goto &_sub_inject;
+}
+
 1;
 
 =encoding utf8
@@ -78,6 +83,7 @@ The reference aliasing operation means no copy is done
 
     sub_inject($name, $code);
     sub_inject($name1, $code1, $name2, $code2);
+    sub_inject(\%subs);
 
 Injects C<$code> as a lexical subroutine named C<$name>
 into the currently compiling scope. The same applies
