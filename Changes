@@ -3,6 +3,8 @@ Release history for Sub-Inject
 
 {{$NEXT}}
 
+v0.3     2017-09-21 18:52:31-07:00 America/Los_Angeles
+
       - Accept a hash ref as input to sub_inject()
 
 v0.2     2017-09-13 12:35:51-07:00 America/Los_Angeles
